@@ -1,0 +1,170 @@
+.show-mobile {
+  height: 5rem;
+
+  display: none;
+
+  @include respond(phone) {
+    display: unset;
+
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    margin: 2rem;
+  }
+
+  &__logo {
+    background-color: yellow;
+    img {
+      height: 3rem;
+    }
+  }
+}
+.hide-mobile {
+  height: 12rem;
+  // margin: 4rem 0rem 4rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $color-secondary-light;
+
+  @include respond(phone) {
+    display: none;
+  }
+
+  // &__logo {
+  //   background-color: yellow;
+  //   display: flex;
+  //   align-items: flex-end;
+  //   img {
+  //     align-self: flex-end;
+  //   }
+  // }
+}
+
+.logo-items {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.nav__logo {
+  img {
+    height: 3rem;
+  }
+}
+
+.nav__items {
+  display: flex;
+}
+.nav__item {
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 2rem;
+  color: $color-secondary-light;
+}
+
+.ham-logo {
+  display: none;
+  @include respond(phone) {
+    display: flex;
+    gap: 2rem;
+  }
+}
+.user {
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+  &__login {
+    img {
+      height: 5.5rem;
+    }
+    cursor: pointer;
+  }
+
+  &__cart {
+    img {
+      width: 4rem;
+
+      cursor: pointer;
+    }
+  }
+}
+
+@include respond(phone) {
+  .user {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-right: 2rem;
+    &__login {
+      img {
+        height: 4rem;
+      }
+      cursor: pointer;
+    }
+
+    &__cart {
+      img {
+        width: 3rem;
+      }
+      cursor: pointer;
+    }
+  }
+}
+
+.hamburger-btn-wrapper {
+  width: 3.2rem;
+  height: 3rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.hamburger-btn {
+  display: none;
+
+  @include respond(phone) {
+    display: block;
+    width: 3.2rem;
+    height: 5px;
+    background-color: $color-secondary-dark-mid;
+    position: absolute;
+    top: 50%;
+    transform: translateY((-50%));
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 3.2rem;
+      background-color: $color-secondary-dark-mid;
+      height: 5px;
+      transform: translateY(-1.1rem);
+      top: 0;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 3.2rem;
+      background-color: $color-secondary-dark-mid;
+      height: 5px;
+      transform: translateY(1.1rem);
+      top: 0;
+    }
+  }
+}
+
+.nav__items {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  @include respond(phone) {
+    display: none;
+  }
+}

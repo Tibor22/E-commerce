@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!-- <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style> -->
+
+    <link rel="stylesheet" href="Sass/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="show-mobile">
+        <div class="ham-logo">
+          <div class="hamburger-btn-wrapper">
+            <div class="hamburger-btn"></div>
+          </div>
+          <div class="nav__logo"><img src="images/logo.svg" alt="" /></div>
+        </div>
+        <ul class="nav__items">
+          <li class="nav__item">
+            <a class="nav__link" href="#">Collections</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#"> Men</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Women </a></li>
+          <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
+        </ul>
+        <div class="user">
+          <div class="user__cart">
+            <img src="images/icon-cart.svg" alt="" />
+          </div>
+          <div class="user__login">
+            <img src="images/image-avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+      <nav class="hide-mobile">
+        <!-- <div class="hamburger-btn-wrapper">
+          <div class="hamburger-btn"></div>
+        </div> -->
+        <div class="logo-items">
+          <div class="nav__logo"><img src="images/logo.svg" alt="" /></div>
+
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a class="nav__link" href="#">Collections</a>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="#"> Men</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Women </a></li>
+            <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="user">
+          <div class="user__cart">
+            <img src="images/icon-cart.svg" alt="" />
+          </div>
+          <div class="user__login">
+            <img src="images/image-avatar.png" alt="" />
+          </div>
+        </div>
+      </nav>
+      <div class="main">
+        <div class="product-gallery">
+          <div class="arrow-left">
+            <img src="images/icon-previous.svg" alt="" />
+          </div>
+          <div class="arrow-right">
+            <img src="images/icon-next.svg" alt="" />
+          </div>
+          <img
+            src="images/image-product-1.jpg"
+            alt=""
+            class="product-highlight"
+          />
+          <div class="room-preview">
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              class="product-active"
+              alt=""
+            />
+            <img src="images/image-product-2-thumbnail.jpg" alt="" />
+            <img src="images/image-product-3-thumbnail.jpg" alt="" />
+            <img src="images/image-product-4-thumbnail.jpg" alt="" />
+          </div>
+        </div>
+        <div class="product">
+          <div class="product__description">
+            <div class="product__description--company">Sneaker Company</div>
+            <div class="product__description--title">
+              Fall Limited Edition <br />
+              Sneakers
+            </div>
+
+            <div class="product__description--article">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </div>
+          </div>
+          <div class="product__pricing">
+            <div class="product__sell">
+              <div class="product__sell--price">$125.00</div>
+              <div class="product__sell--discount">50%</div>
+            </div>
+            <div class="product__old-price">$250.00</div>
+          </div>
+          <div class="product__cart">
+            <div class="product__field">
+              <div class="product__field--minus">
+                <img src="images/icon-minus.svg" alt="" />
+              </div>
+              <div class="product__field--main">0</div>
+              <div class="product__field--plus">
+                <img src="images/icon-plus.svg" alt="" />
+              </div>
+            </div>
+            <div class="product__cart--cta">
+              <button>
+                <img src="images/icon-cart.svg" alt="" />
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>

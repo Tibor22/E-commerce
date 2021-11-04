@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $family-Kumbh;
+  overflow-x: hidden;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  @include respond(phone) {
+    width: 100vw;
+    margin: 0 0;
+    overflow-x: unset;
+  }
+}
