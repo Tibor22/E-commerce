@@ -57,6 +57,7 @@
 .nav__items {
   display: flex;
 }
+
 .nav__item {
   list-style: none;
   margin-right: 2rem;
@@ -135,6 +136,7 @@
     position: absolute;
     top: 50%;
     transform: translateY((-50%));
+    z-index: 9999;
 
     &:before {
       position: absolute;
@@ -144,6 +146,7 @@
       height: 5px;
       transform: translateY(-1.1rem);
       top: 0;
+      transition: transform 0.3s;
     }
     &:after {
       position: absolute;
@@ -153,13 +156,97 @@
       height: 5px;
       transform: translateY(1.1rem);
       top: 0;
+      transition: transform 0.3s;
+    }
+  }
+}
+
+.hamburger-btn.open {
+  @include respond(phone) {
+    display: block;
+    width: 3.2rem;
+    height: 5px;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY((-50%));
+    z-index: 9999;
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 3.2rem;
+      background-color: $color-secondary-dark-mid;
+      height: 5px;
+      transform: translateY(-0.2rem) rotate(45deg);
+      top: 0;
+      transition: transform 0.3s;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 3.2rem;
+      background-color: $color-secondary-dark-mid;
+      height: 5px;
+      transform: translateY(-0.2rem) rotate(-45deg);
+      top: 0;
+      transition: transform 0.3s;
     }
   }
 }
 
 .nav__items {
   @include respond(phone) {
-    display: none;
+    display: unset;
+    position: absolute;
+    background-color: white;
+    z-index: 100;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    margin: -2rem;
+    width: 60%;
+    transition: all 0.4s;
+  }
+}
+
+.nav__items.nav__open {
+  @include respond(phone) {
+    display: unset;
+    position: absolute;
+    background-color: white;
+    z-index: 100;
+    height: 100%;
+    top: 0;
+    left: 0%;
+    margin: 0rem;
+    margin-top: -2rem;
+    width: 60%;
+    transition: all 0.4s;
+    box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.nav__item {
+  @include respond(phone) {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &:first-child {
+    @include respond(phone) {
+      margin-top: 10rem;
+    }
+  }
+}
+
+.nav__link {
+  &:hover {
+    color: $color-primary;
+  }
+  @include respond(phone) {
+    color: black;
+    font-weight: 700;
   }
 }
 
