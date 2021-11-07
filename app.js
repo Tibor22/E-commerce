@@ -5,11 +5,11 @@ const arrowRight = document.querySelector(".arrow-right");
 
 const overlay = document.querySelector(".overlay");
 const navUl = document.querySelector(".nav__items");
+
 const body = document.body;
 let closeGallery = false;
 const lWidth = window.screen.width;
-console.log(lWidth);
-
+let nextPic = 0;
 const vw = Math.max(
   document.documentElement.clientWidth || 0,
   window.innerWidth || 0
@@ -18,8 +18,6 @@ const vh = Math.max(
   document.documentElement.clientHeight || 0,
   window.innerHeight || 0
 );
-
-console.log(vw, vh);
 
 // NAVIGATION
 
@@ -32,7 +30,6 @@ hamburgerBTN.addEventListener("click", function () {
 
 function imageGallery() {
   if (vw >= 800) {
-    console.log(lWidth);
     const highlight = document.querySelector(".product-highlight");
     const previews = document.querySelectorAll(".room-preview img");
 
@@ -77,3 +74,46 @@ function closeImage() {
 }
 
 imageGallery();
+
+// NEXT IMAGE
+
+arrowRight.addEventListener("click", function () {
+  if (nextPic < 3) {
+    nextPic++;
+    const highlight = document.querySelector(".product-highlight");
+    const previews = document.querySelectorAll(".room-preview img");
+    const smallScr = previews[nextPic].src;
+
+    const bigScr = smallScr.replace(
+      `${nextPic + 1}-thumbnail`,
+      `${nextPic + 1}`
+    );
+    console.log(bigScr);
+    highlight.src = bigScr;
+    console.log(highlight.src);
+    previews.forEach((preview) => preview.classList.remove("product-active"));
+    previews[nextPic].classList.add("product-active");
+  }
+});
+
+// PREV IMAGE
+
+arrowLeft.addEventListener("click", function () {
+  if (nextPic >= 1) {
+    nextPic--;
+    console.log(nextPic);
+    const highlight = document.querySelector(".product-highlight");
+    const previews = document.querySelectorAll(".room-preview img");
+    const smallScr = previews[nextPic].src;
+
+    const bigScr = smallScr.replace(
+      `${nextPic + 1}-thumbnail`,
+      `${nextPic + 1}`
+    );
+    console.log(bigScr);
+    highlight.src = bigScr;
+    console.log(highlight.src);
+    previews.forEach((preview) => preview.classList.remove("product-active"));
+    previews[nextPic].classList.add("product-active");
+  }
+});
