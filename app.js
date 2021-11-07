@@ -43,6 +43,7 @@ function imageGallery() {
           preview.classList.remove("product-active")
         );
         preview.classList.add("product-active");
+        nextPic = i;
       });
     });
 

@@ -597,18 +597,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  cursor: unset;
   border: none;
   z-index: 10000;
 }
 .product-gallery.big img {
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: unset;
 }
 
 .room-preview {
   margin: 3rem 0rem 3rem 0rem;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
   height: 15%;
 }
 .room-preview img {
@@ -627,6 +630,7 @@ body {
 @media (max-width: 40.5em) {
   .room-preview img {
     display: none;
+    cursor: unset;
   }
 }
 .room-preview img.product-active {
@@ -648,6 +652,7 @@ body {
      object-fit: cover;
   -o-object-position: 100% 10%;
      object-position: 100% 10%;
+  cursor: pointer;
 }
 @media (max-width: 40.5em) {
   .product-highlight {
@@ -657,6 +662,7 @@ body {
        object-fit: cover;
     position: relative;
     border-radius: 0rem;
+    cursor: unset;
   }
 }
 
