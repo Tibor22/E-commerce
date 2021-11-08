@@ -29,6 +29,7 @@ window.addEventListener("resize", function () {
   w = document.documentElement.clientWidth;
 
   if (w >= 800) {
+    closeImage();
     body.style.width = "80%";
     arrowLeft.style.display = "none";
     arrowRight.style.display = "none";
@@ -85,17 +86,16 @@ function openImage() {
 }
 
 function closeImage() {
-  overlay.addEventListener("click", function () {
-    console.log("click");
-    productGallery.classList.remove("big");
-    body.style.width = "80%";
-    body.style.height = "auto";
-    overlay.classList.add("hidden");
-    arrowLeft.style.display = "none";
-    arrowRight.style.display = "none";
-  });
+  console.log("click");
+  productGallery.classList.remove("big");
+  body.style.width = "80%";
+  body.style.height = "auto";
+  overlay.classList.add("hidden");
+  arrowLeft.style.display = "none";
+  arrowRight.style.display = "none";
 }
 
+overlay.addEventListener("click", closeImage);
 // imageGallery();
 
 // NEXT IMAGE
