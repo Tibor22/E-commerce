@@ -19,6 +19,10 @@ let vh = Math.max(
   window.innerHeight || 0
 );
 
+if (vw >= 800) {
+  imageGallery();
+}
+
 let w;
 imageGallery();
 window.addEventListener("resize", function () {
@@ -26,6 +30,13 @@ window.addEventListener("resize", function () {
 
   if (w >= 800) {
     imageGallery();
+    console.log(`more than`);
+  } else {
+    imageGallery();
+    console.log(`less than`);
+    body.style.width = "100%";
+    arrowLeft.style.display = "flex";
+    arrowRight.style.display = "flex";
   }
 });
 
