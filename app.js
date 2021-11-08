@@ -29,6 +29,9 @@ window.addEventListener("resize", function () {
   w = document.documentElement.clientWidth;
 
   if (w >= 800) {
+    body.style.width = "80%";
+    arrowLeft.style.display = "none";
+    arrowRight.style.display = "none";
     imageGallery();
     console.log(`more than`);
   } else {
