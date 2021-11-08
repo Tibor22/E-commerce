@@ -8,16 +8,28 @@ const navUl = document.querySelector(".nav__items");
 
 const body = document.body;
 let closeGallery = false;
-const lWidth = window.screen.width;
+let lWidth = window.screen.width;
 let nextPic = 0;
-const vw = Math.max(
+let vw = Math.max(
   document.documentElement.clientWidth || 0,
   window.innerWidth || 0
 );
-const vh = Math.max(
+let vh = Math.max(
   document.documentElement.clientHeight || 0,
   window.innerHeight || 0
 );
+
+let w;
+imageGallery();
+window.addEventListener("resize", function () {
+  w = document.documentElement.clientWidth;
+
+  if (w >= 800) {
+    imageGallery();
+  }
+});
+
+console.log(w);
 
 // NAVIGATION
 
@@ -29,27 +41,23 @@ hamburgerBTN.addEventListener("click", function () {
 //IMAGE GALLERY
 
 function imageGallery() {
-  if (vw >= 800) {
-    const highlight = document.querySelector(".product-highlight");
-    const previews = document.querySelectorAll(".room-preview img");
+  const highlight = document.querySelector(".product-highlight");
+  const previews = document.querySelectorAll(".room-preview img");
 
-    previews.forEach((preview, i) => {
-      preview.addEventListener("click", function () {
-        const smallScr = this.src;
-        const bigScr = smallScr.replace("-thumbnail", "");
-        highlight.src = bigScr;
+  previews.forEach((preview, i) => {
+    preview.addEventListener("click", function () {
+      const smallScr = this.src;
+      const bigScr = smallScr.replace("-thumbnail", "");
+      highlight.src = bigScr;
 
-        previews.forEach((preview) =>
-          preview.classList.remove("product-active")
-        );
-        preview.classList.add("product-active");
-        nextPic = i;
-      });
+      previews.forEach((preview) => preview.classList.remove("product-active"));
+      preview.classList.add("product-active");
+      nextPic = i;
     });
+  });
 
-    highlight.addEventListener("click", openImage);
-    closeImage();
-  }
+  highlight.addEventListener("click", openImage);
+  closeImage();
 }
 
 function openImage() {
@@ -74,7 +82,7 @@ function closeImage() {
   });
 }
 
-imageGallery();
+// imageGallery();
 
 // NEXT IMAGE
 
@@ -89,9 +97,9 @@ arrowRight.addEventListener("click", function () {
       `${nextPic + 1}-thumbnail`,
       `${nextPic + 1}`
     );
-    console.log(bigScr);
+
     highlight.src = bigScr;
-    console.log(highlight.src);
+
     previews.forEach((preview) => preview.classList.remove("product-active"));
     previews[nextPic].classList.add("product-active");
   }
@@ -102,7 +110,7 @@ arrowRight.addEventListener("click", function () {
 arrowLeft.addEventListener("click", function () {
   if (nextPic >= 1) {
     nextPic--;
-    console.log(nextPic);
+
     const highlight = document.querySelector(".product-highlight");
     const previews = document.querySelectorAll(".room-preview img");
     const smallScr = previews[nextPic].src;
@@ -111,9 +119,9 @@ arrowLeft.addEventListener("click", function () {
       `${nextPic + 1}-thumbnail`,
       `${nextPic + 1}`
     );
-    console.log(bigScr);
+
     highlight.src = bigScr;
-    console.log(highlight.src);
+
     previews.forEach((preview) => preview.classList.remove("product-active"));
     previews[nextPic].classList.add("product-active");
   }
