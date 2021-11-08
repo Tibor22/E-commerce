@@ -644,7 +644,6 @@ body {
   .room-preview img {
     display: none;
     cursor: unset;
-    margin: 0;
   }
 }
 .room-preview img.product-active {

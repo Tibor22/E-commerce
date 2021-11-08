@@ -65,7 +65,6 @@
     @include respond(phone) {
       display: none;
       cursor: unset;
-      margin: 0;
     }
   }
 
