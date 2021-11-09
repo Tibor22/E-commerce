@@ -51,7 +51,7 @@ body {
   body {
     width: 100vw;
     margin: 0 0;
-    overflow-x: unset;
+    overflow-x: hidden;
     z-index: 100;
   }
 }
