@@ -1,5 +1,6 @@
 .user__cart {
   position: relative;
+  outline: none;
 
   @include respond(phone) {
     position: unset;

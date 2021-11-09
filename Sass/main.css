@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html {
@@ -765,6 +766,7 @@ body {
 
 .user__cart {
   position: relative;
+  outline: none;
 }
 @media (max-width: 40.5em) {
   .user__cart {
