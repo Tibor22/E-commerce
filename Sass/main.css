@@ -65,7 +65,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
-  z-index: 5;
+  z-index: 12;
 }
 @media (max-width: 40.5em) {
   .overlay {
@@ -750,7 +750,11 @@ body {
 
 .user__cart {
   position: relative;
-  background-color: blue;
+}
+@media (max-width: 40.5em) {
+  .user__cart {
+    position: unset;
+  }
 }
 .user__cart-popup {
   top: -50%;
@@ -761,9 +765,19 @@ body {
   position: absolute;
   overflow: auto;
   transform: translate(-46%, 30%);
-  z-index: 6;
+  z-index: 11;
   border-radius: 1rem;
+  box-shadow: 0px 17px 27px 5px rgba(0, 0, 0, 0.53);
   padding: 3rem 2rem;
+}
+@media (max-width: 40.5em) {
+  .user__cart-popup {
+    overflow: unset;
+    left: 50%;
+    right: 50%;
+    top: 6%;
+    transform: translate(-50%, 10%);
+  }
 }
 .user__cart-popup h3 {
   font-size: 2rem;
