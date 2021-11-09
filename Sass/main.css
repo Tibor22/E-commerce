@@ -196,7 +196,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 9999;
+    z-index: 9999999;
   }
   .hamburger-btn:before {
     position: absolute;
@@ -601,7 +601,7 @@ body {
   justify-content: flex-end;
   cursor: unset;
   border: none;
-  z-index: 10000;
+  z-index: 1000;
 }
 .product-gallery.big img {
   -o-object-fit: cover;

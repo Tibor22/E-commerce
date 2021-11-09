@@ -18,27 +18,24 @@ let vh = Math.max(
   document.documentElement.clientHeight || 0,
   window.innerHeight || 0
 );
-
+// First open
 if (vw >= 800) {
   imageGallery();
 }
 
 let w;
-imageGallery();
+// imageGallery();
 window.addEventListener("resize", function () {
   w = document.documentElement.clientWidth;
 
   if (w >= 800) {
-    // closeImage();
+    productGallery.classList.remove("big");
+    overlay.classList.add("hidden");
     body.style.width = "80%";
     arrowLeft.style.display = "none";
     arrowRight.style.display = "none";
     imageGallery();
-
-    console.log(`more than`);
   } else {
-    imageGallery();
-    console.log(`less than`);
     body.style.width = "100%";
     arrowLeft.style.display = "flex";
     arrowRight.style.display = "flex";
