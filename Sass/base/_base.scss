@@ -14,7 +14,10 @@ html {
   @include respond(tab-port) {
     font-size: 50%;
   }
-  overflow-x: hidden;
+
+  @include respond(phone) {
+    overflow-x: hidden;
+  }
 }
 
 body {
