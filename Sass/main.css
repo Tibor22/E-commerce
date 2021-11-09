@@ -315,11 +315,27 @@ body {
 
 .main {
   display: flex;
+  overflow-y: visible;
   width: 90%;
   margin: 0 auto;
   margin-top: 8rem;
   height: 70vh;
   justify-content: space-between;
+}
+@media screen and (max-height: 600px) {
+  .main {
+    height: 100vh;
+  }
+}
+@media screen and (max-height: 420px) {
+  .main {
+    height: 150vh;
+  }
+}
+@media screen and (max-height: 280px) {
+  .main {
+    height: 200vh;
+  }
 }
 @media (max-width: 40.5em) {
   .main {

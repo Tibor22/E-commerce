@@ -3,12 +3,21 @@
 
 .main {
   display: flex;
-
+  overflow-y: visible;
   width: 90%;
   margin: 0 auto;
   margin-top: 8rem;
   height: 70vh;
   justify-content: space-between;
+  @media screen and (max-height: 600px) {
+    height: 100vh;
+  }
+  @media screen and (max-height: 420px) {
+    height: 150vh;
+  }
+  @media screen and (max-height: 280px) {
+    height: 200vh;
+  }
   @include respond(phone) {
     display: unset;
   }
