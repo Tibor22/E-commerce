@@ -156,6 +156,10 @@ body {
 .user__login img {
   height: 5.5rem;
 }
+.user__cart {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 .user__cart img {
   width: 4rem;
   cursor: pointer;
@@ -429,7 +433,7 @@ body {
   width: 30%;
 }
 .product__field--main {
-  flex-grow: 6.5;
+  flex-grow: 6.2;
   justify-self: center;
 }
 .product__field--minus {
@@ -437,12 +441,20 @@ body {
   align-items: center;
   flex-grow: 6;
   cursor: pointer;
+  padding: 1rem;
+}
+.product__field--minus:hover {
+  opacity: 0.8;
 }
 .product__field--plus {
   display: flex;
   align-items: center;
   flex-grow: 0;
   cursor: pointer;
+  padding: 1rem;
+}
+.product__field--plus:hover {
+  opacity: 0.8;
 }
 .product__cart--cta {
   width: 70%;
@@ -462,6 +474,9 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+}
+.product__cart--cta button:hover {
+  opacity: 0.8;
 }
 .product__cart--cta button img {
   color: white;
@@ -548,7 +563,7 @@ body {
     width: auto;
   }
   .product__field--main {
-    flex-grow: 6.5;
+    flex-grow: 6;
     justify-self: center;
   }
   .product__field--minus {
@@ -756,7 +771,11 @@ body {
     position: unset;
   }
 }
+.user__cart:hover .user__cart-popup {
+  display: block;
+}
 .user__cart-popup {
+  display: none;
   top: -50%;
   left: 0%;
   width: 38rem;
@@ -764,15 +783,15 @@ body {
   background-color: white;
   position: absolute;
   overflow: auto;
-  transform: translate(-46%, 30%);
+  transform: translate(-46%, 42%);
   z-index: 11;
   border-radius: 1rem;
-  box-shadow: 0px 17px 27px 5px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 17px 27px 5px rgba(0, 0, 0, 0.43);
   padding: 3rem 2rem;
 }
 @media (max-width: 40.5em) {
   .user__cart-popup {
-    overflow: unset;
+    overflow: hidden;
     left: 50%;
     right: 50%;
     top: 6%;
@@ -808,9 +827,14 @@ body {
   flex-grow: 1;
   font-size: 1.8rem;
 }
-.user__cart-popup-details-delete img {
-  height: 2rem;
-  width: 2rem;
+.user__cart-popup-details-delete {
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+.user__cart-popup-details-delete :hover {
+  color: red;
+  transform: scale(1.05) translateY(-2px);
+  transition: all 0.2s;
 }
 .user__cart-popup-checkout {
   background-color: #ff7d1a;
@@ -827,4 +851,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+}
+.user__cart-popup-checkout:hover {
+  opacity: 0.8;
 }/*# sourceMappingURL=main.css.map */

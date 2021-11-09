@@ -4,8 +4,14 @@
   @include respond(phone) {
     position: unset;
   }
+  &:hover {
+    .user__cart-popup {
+      display: block;
+    }
+  }
 
   &-popup {
+    display: none;
     top: -50%;
     left: -0%;
     width: 38rem;
@@ -13,16 +19,16 @@
     background-color: white;
     position: absolute;
     overflow: auto;
-    transform: translate(-46%, 30%);
+    transform: translate(-46%, 42%);
     z-index: 11;
     border-radius: 1rem;
     // background-color: yellow;
-    -webkit-box-shadow: 0px 17px 27px 5px rgba(0, 0, 0, 0.53);
-    box-shadow: 0px 17px 27px 5px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 0px 17px 27px 5px rgba(0, 0, 0, 0.43);
+    box-shadow: 0px 17px 27px 5px rgba(0, 0, 0, 0.43);
     padding: 3rem 2rem;
 
     @include respond(phone) {
-      overflow: unset;
+      overflow: hidden;
       left: 50%;
       right: 50%;
       top: 6%;
@@ -59,9 +65,13 @@
         font-size: 1.8rem;
       }
       &-delete {
-        img {
-          height: 2rem;
-          width: 2rem;
+        font-size: 2.2rem;
+        cursor: pointer;
+
+        :hover {
+          color: red;
+          transform: scale(1.05) translateY(-2px);
+          transition: all 0.2s;
         }
       }
     }
@@ -80,6 +90,9 @@
       justify-content: center;
       align-items: center;
       font-size: 2rem;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
