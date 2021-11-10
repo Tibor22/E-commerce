@@ -784,7 +784,7 @@ body {
 }
 .user__cart-popup {
   display: none;
-  top: -50%;
+  top: -35%;
   left: 0%;
   width: 38rem;
   height: 26rem;
@@ -875,6 +875,8 @@ body {
 }
 
 .cart-counter {
+  position: absolute;
+  top: 10%;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -884,4 +886,9 @@ body {
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 700;
+}
+@media (max-width: 40.5em) {
+  .cart-counter {
+    top: 1%;
+  }
 }/*# sourceMappingURL=main.css.map */
