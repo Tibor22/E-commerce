@@ -82,7 +82,14 @@
   align-items: center;
   &__login {
     img {
+      border: 2px solid transparent;
+      border-radius: 50%;
       height: 5.5rem;
+      &:hover {
+        border: 2px solid $color-primary;
+        border-radius: 50%;
+        transition: all 0.14s;
+      }
     }
     cursor: pointer;
   }

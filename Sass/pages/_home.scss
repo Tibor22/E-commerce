@@ -18,6 +18,10 @@
   @media screen and (max-height: 280px) {
     height: 200vh;
   }
+  @include respond(tab-land) {
+    height: 60vh;
+    width: 100%;
+  }
   @include respond(phone) {
     display: unset;
   }
@@ -40,6 +44,9 @@
       letter-spacing: 1.8px;
       color: $color-primary;
       margin-bottom: 2rem;
+      @include respond(big-phone) {
+        margin-bottom: 1.5rem;
+      }
     }
 
     &--title {
@@ -47,6 +54,9 @@
       font-size: 4rem;
       line-height: 4.4rem;
       margin-bottom: 4rem;
+      @include respond(big-phone) {
+        margin-bottom: 2rem;
+      }
     }
     &--article {
       font-size: 1.6rem;
@@ -279,7 +289,7 @@
       button {
         background-color: $color-primary;
         //   margin: 2rem;
-        padding: 1.9rem 0rem 1.9rem 0rem;
+        padding: 2.5rem 0rem 2.5rem 0rem;
         width: 100%;
         color: white;
         font-weight: 700;

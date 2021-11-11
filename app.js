@@ -35,6 +35,7 @@ minusProduct.addEventListener("click", function () {
 let cartCounter = 0;
 
 addToCartBtn.addEventListener("click", function () {
+  if (productCounter === 0) return;
   const total = productCounter * priceNum;
 
   const html = `
@@ -133,6 +134,12 @@ window.addEventListener("resize", function () {
     arrowLeft.style.display = "none";
     arrowRight.style.display = "none";
     imageGallery();
+  } else if (w <= 800 && w >= 650) {
+    body.style.width = "100%";
+    arrowLeft.style.display = "none";
+    arrowRight.style.display = "none";
+    // arrowLeft.style.display = "flex";
+    // arrowRight.style.display = "flex";
   } else {
     body.style.width = "100%";
     arrowLeft.style.display = "flex";

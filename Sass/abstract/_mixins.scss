@@ -4,6 +4,12 @@
       @content;
     }
   }
+
+  @if $breakpoint == big-phone {
+    @media (max-width: 800px) {
+      @content;
+    }
+  }
   @if $breakpoint == tab-port {
     @media (max-width: 56.25em) {
       @content;
