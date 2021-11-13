@@ -120,6 +120,8 @@ let vh = Math.max(
 // First open
 if (vw >= 800) {
   imageGallery();
+} else if (vw <= 600) {
+  arrowLeft.style.display = "none";
 }
 
 let w;
@@ -180,8 +182,15 @@ function imageGallery() {
 
 function openImage() {
   productGallery.classList.add("big");
-  arrowLeft.style.display = "flex";
-  arrowRight.style.display = "flex";
+
+  nextPic === 3
+    ? (arrowRight.style.display = "none")
+    : (arrowRight.style.display = "flex");
+  nextPic === 0
+    ? (arrowLeft.style.display = "none")
+    : (arrowLeft.style.display = "flex");
+  // arrowLeft.style.display = "flex";
+  // arrowRight.style.display = "flex";
   body.style.width = "100%";
   body.style.height = "100vh";
   closeGallery = true;
@@ -205,6 +214,8 @@ function closeImage() {
 // NEXT IMAGE
 
 arrowRight.addEventListener("click", function () {
+  if (nextPic === 2) arrowRight.style.display = "none";
+  if (nextPic === 0) arrowLeft.style.display = "flex";
   if (nextPic < 3) {
     nextPic++;
     const highlight = document.querySelector(".product-highlight");
@@ -226,6 +237,8 @@ arrowRight.addEventListener("click", function () {
 // PREV IMAGE
 
 arrowLeft.addEventListener("click", function () {
+  if (nextPic === 3) arrowRight.style.display = "flex";
+  if (nextPic === 1) arrowLeft.style.display = "none";
   if (nextPic >= 1) {
     nextPic--;
 
